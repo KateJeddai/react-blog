@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-//import { PostItem } from './PostItem';
+import { PostItem } from './PostItem';
+import selectPosts from '../selectors/selectPosts';
 
 const PostsList = (props) => {
    console.log(props.posts);
@@ -9,9 +10,7 @@ const PostsList = (props) => {
        {props.posts.length > 0 && props.posts.map(post => {
             return(
                <div key={post.title}>
-                 <h2>{post.title}</h2>
-                 <p>{post.time}</p>
-                 <p>{post.text}</p>
+                 <PostItem title={post.title} time={post.time} text={post.text} />
                </div>
             );
         })} 
@@ -20,7 +19,7 @@ const PostsList = (props) => {
 };
 
 const mapStateToProps = (state) => ({
-        posts: state.postReducer.posts
+        posts: selectPosts(state.postReducer.posts, state.filterReducer)
 });
 
 
