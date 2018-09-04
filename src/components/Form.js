@@ -36,8 +36,8 @@ export class Form extends React.Component{
         this.setState(() => ({ title }));
     }
     handleTextChange = (e) => {
-        let time = moment().format();
-            console.log(time);
+        let time = moment().format('x');
+            
         const text = e.target.value;
         this.setState(() => ({ text, time }));
     }

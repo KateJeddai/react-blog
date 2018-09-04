@@ -1,11 +1,11 @@
 export default (state = { sortBy: 'name' }, action) => {
     switch(action.type){
         case 'SORT_BY_NAME': 
+            console.log(action.payload);
             return {...state, sortBy: 'name'};
-            break;
         case 'SORT_BY_DATE':
-            return {...state, sortBy: 'date'}
-            break;
+            console.log(action.payload);
+            return {...state, sortBy: 'date'};
     }
     return state;
 };
