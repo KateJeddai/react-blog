@@ -1,4 +1,4 @@
-export default (state = { sortBy: 'name' }, action) => {
+export default (state = { sortBy: '' }, action) => {
     switch(action.type){
         case 'SORT_BY_NAME': 
             console.log(action.payload);

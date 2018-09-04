@@ -5,9 +5,9 @@ export class Form extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            title: '',
-            text: '',
-            time: '',
+            title: props.post ? props.post.title : '',
+            text: props.post ? props.post.text : '',
+            time: props.post ? props.post.time : '',
             error: ''
         };
     }
@@ -46,9 +46,9 @@ export class Form extends React.Component{
             <form onSubmit={this.handleSubmit}>
                {this.state.error && <p>{this.state.error}</p>}
                 <label>Title</label>
-                <input type="text" onChange={this.handleTitleChange} />
+                <input type="text" value={this.state.title} onChange={this.handleTitleChange} />
                 <label>Text</label>
-                <textarea onChange={this.handleTextChange}></textarea>
+                <textarea value={this.state.text} onChange={this.handleTextChange}></textarea>
                 <button type="submit">Save Post</button>
             </form>
         );    

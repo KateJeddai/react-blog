@@ -4,12 +4,21 @@ import { PostItem } from './PostItem';
 import sortPosts from '../selectors/sortPosts';
 
 const PostsList = (props) => {
-   console.log(props.posts);
+   let posts = props.posts;
+       posts = posts.sort((a, b) => {
+        if(props.sortBy === 'name'){
+          return a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1;
+        }   
+         else if(props.sortBy === 'date'){
+          return a.time > b.time ? 1 : -1;
+        }
+       });
+       console.log(posts);
    return(
     <div>
-       {props.posts.length > 0 && props.posts.map(post => (
+       {posts.length > 0 && posts.map(post => (
                <div key={post.title}>
-                 <PostItem title={post.title} time={post.time} text={post.text} />
+                 <PostItem title={post.title} time={post.time} text={post.text} id={post.id} />
                </div>
             )
        )} 
@@ -19,7 +28,8 @@ const PostsList = (props) => {
 
 
 const mapStateToProps = (state) => ({
-        posts: sortPosts(state.postReducer.posts, state.filterReducer)
+        posts: state.postReducer.posts,
+        sortBy: state.filterReducer.sortBy
 });
 
 
