@@ -25,20 +25,19 @@ export class Form extends React.Component{
             }));
             this.props.onSubmit({
                 title: this.state.title,
-                text:  this.state.text,
-                time:  this.state.time
+                text: this.state.text,
+                time: this.state.time
             });
         }
     }
     
     handleTitleChange = (e) => {
-        const title = e.target.value;
+        let title = e.target.value;
         this.setState(() => ({ title }));
     }
     handleTextChange = (e) => {
         let time = moment().format('x');
-            
-        const text = e.target.value;
+        let text = e.target.value;
         this.setState(() => ({ text, time }));
     }
     render(){

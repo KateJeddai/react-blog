@@ -1,9 +1,9 @@
 export const sortByName = () => ({
     type: 'SORT_BY_NAME',
-    payload: 'dispatched byname'
+    payload: 'name'
 });
 
 export const sortByDate = () => ({
     type: 'SORT_BY_DATE',
-    payload: 'dispatched bydate'
+    payload: 'date'
 });

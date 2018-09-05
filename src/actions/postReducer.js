@@ -11,3 +11,18 @@ export const addPost = (post) => ({
         time: post.time
     }
 });
+
+export const editPost = (id, updates) => ({
+    type: 'EDIT_POST',
+    payload: {
+        id,
+        title: updates.title,
+        text: updates.text,
+        time: updates.time
+    }    
+});
+
+export const removePost = (id) => ({
+    type: 'REMOVE_POST',
+    id
+})

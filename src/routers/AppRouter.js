@@ -27,7 +27,7 @@ const AppRouter = () => (
               component={EditPost}
             />
         </Switch>
-      </div>  t
+      </div>  
     </Router>
 );
 
