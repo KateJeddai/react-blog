@@ -1,0 +1,49 @@
+@import 'settings';
+
+.post-item{
+    display: flex;
+    direction: column;
+    width: 100%;
+    margin: $m-size auto;
+    padding: $s-size $m-size;
+    text-decoration: none;
+    border: $light-grey 1px solid;
+    border-radius: 5px;
+    .post-title{
+        display: flex;
+        direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: $m-size;
+    }    
+    h1{
+        margin: 0;
+        text-transform: uppercase;
+        font-size: $m-size;
+        color: 	$blue;
+        text-indent: $m-size;
+    }
+    .badge{
+        background-color: coral;
+        padding: 3px 5px;
+        border-radius: 3px;
+        color: #fff;
+    }
+    .post-content{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .post-image{
+        flex-basis: 45%;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .post-text{
+        flex-basis: 50%;
+        word-break: break-all;        
+        color: $dark-grey;
+    }
+}

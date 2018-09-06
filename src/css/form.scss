@@ -1,0 +1,25 @@
+@import 'settings';
+
+.form{
+    width: 60%;
+    margin: $xl-size auto;
+    input{
+        width: 100%;
+        margin: $s-size auto;
+        padding: 5px 10px;
+        font-size: $s-size;
+    }
+    label{
+        font-size: $s-size;
+    }
+    textarea{
+        @extend input;
+        height: 10rem;
+        font-family: Arial, sans-serif;
+    }
+}
+
+.edit-title{
+    width: 60%;
+    margin: $l-size auto 0 auto;
+}

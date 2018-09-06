@@ -1,0 +1,14 @@
+@import 'settings';
+
+.dashboard{
+    padding: $m-size;
+    .dashboard-btns{
+        margin-top: $m-size;
+        display: flex;
+        direction: row;
+        justify-content: space-between;
+    }
+    .posts-list{
+        margin-top: $l-size;
+    }
+}

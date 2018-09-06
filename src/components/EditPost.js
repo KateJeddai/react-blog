@@ -14,10 +14,10 @@ const EditPost = (props) => {
         props.history.push('/');
     };
     return(
-        <div>
-          <h1>Edit Post</h1>
-          <Form post={props.post} onSubmit={handleSubmit} />
-          <button post={props.post} onClick={handleRemove}>Remove post</button>
+        <div className="container">
+            <h1 className="edit-title">Edit Post</h1>
+            <Form post={props.post} onSubmit={handleSubmit} />
+            <button className="button btn-remove" post={props.post} onClick={handleRemove}>Remove post</button>
         </div>
     );
 }

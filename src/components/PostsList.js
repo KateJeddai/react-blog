@@ -15,7 +15,7 @@ const PostsList = (props) => {
         });
       }
    return(
-    <div>
+    <div className="posts-list">
        {posts.length > 0 && posts.map(post => (
                <div key={post.title}>
                  <PostItem title={post.title} time={post.time} text={post.text} id={post.id} />

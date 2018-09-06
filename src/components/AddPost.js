@@ -5,6 +5,7 @@ import { addPost } from '../actions/postReducer';
 
 class AddPost extends React.Component{
     handleSubmit = (post) => {
+        console.log(post);
         this.props.addPost(post);
         this.props.history.push('/');
     };

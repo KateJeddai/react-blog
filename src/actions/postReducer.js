@@ -8,7 +8,8 @@ export const addPost = (post) => ({
         id: uuidv1(),
         title: post.title,
         text: post.text,
-        time: post.time
+        time: post.time,
+        file: post.file
     }
 });
 
