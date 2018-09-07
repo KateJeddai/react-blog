@@ -10,40 +10,52 @@
     border: $light-grey 1px solid;
     border-radius: 5px;
     .post-title{
-        display: flex;
-        direction: row;
-        justify-content: space-between;
-        align-items: center;
         margin-bottom: $m-size;
-    }    
+        word-break: break-all; 
+    } 
+    h1, .badge{
+        display: inline-block;
+    }   
     h1{
         margin: 0;
         text-transform: uppercase;
         font-size: $m-size;
         color: 	$blue;
         text-indent: $m-size;
+        margin-right: $s-size;
     }
     .badge{
         background-color: coral;
         padding: 3px 5px;
         border-radius: 3px;
         color: #fff;
+        vertical-align: bottom;
+        font-size: 0.9rem;
     }
     .post-content{
         display: flex;
-        flex-direction: row;
+        width: 100%;
+        flex-direction: column;
         justify-content: space-between;
+        @media(min-width: $desktop-breakpoint){
+            flex-direction: row;  
+        }
     }
     .post-image{
         flex-basis: 45%;
         img{
             width: 100%;
-            height: 100%;
+            height: auto;
         }
     }
     .post-text{
         flex-basis: 50%;
         word-break: break-all;        
         color: $dark-grey;
+        white-space: pre-line;
+        p:first-child{
+            font-size: 0.9rem;
+            font-style: italic;
+        }
     }
 }

@@ -10,10 +10,12 @@ body{
     color: $dark-grey;
 }
 .container{
-    position: relative;
-    width: 60vw;
+    width: 70%;
     height: auto;
     margin: 0 auto;
+    @media(min-width: $desktop-breakpoint){
+        width: 50%;    
+    }
 }
 .button{
     padding: 12px 20px 10px 20px;
@@ -24,9 +26,7 @@ body{
     cursor: pointer;
     text-decoration: none;
 }
+
 .btn-remove{
-    background-color: $red;
-    position: absolute;
-    bottom: 0.2rem;
-    right: 12.5rem;
+   background-color: $red;   
 }

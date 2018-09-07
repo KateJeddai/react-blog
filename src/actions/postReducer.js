@@ -9,7 +9,7 @@ export const addPost = (post) => ({
         title: post.title,
         text: post.text,
         time: post.time,
-        file: post.file
+        img: post.img
     }
 });
 

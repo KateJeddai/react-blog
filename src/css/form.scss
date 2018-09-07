@@ -1,8 +1,11 @@
 @import 'settings';
 
+form{
+    width: 100%;
+}
 .form{
-    width: 60%;
-    margin: $xl-size auto;
+    width: 100%;
+    margin: $xl-size 0;    
     input{
         width: 100%;
         margin: $s-size auto;
@@ -20,6 +23,5 @@
 }
 
 .edit-title{
-    width: 60%;
     margin: $l-size auto 0 auto;
 }

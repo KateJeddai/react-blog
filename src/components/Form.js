@@ -9,7 +9,7 @@ export class Form extends React.Component{
             title: props.post ? props.post.title : '',
             text: props.post ? props.post.text : '',
             time: props.post ? props.post.time : '',
-            file: props.post ? props.post.file : null,
+            img: props.post ? props.post.img : '',
             error: ''
         };
     }
@@ -28,7 +28,7 @@ export class Form extends React.Component{
                 title: this.state.title,
                 text: this.state.text,
                 time: this.state.time,
-                file: this.state.file
+                img: this.state.img
             });
         }
     }
@@ -37,16 +37,21 @@ export class Form extends React.Component{
         let title = e.target.value;
         this.setState(() => ({ title }));
     }
-    handleImageUpload = (e) => {
-        let fileImg = URL.createObjectURL(e.target.files[0]),
-            file = fileImg.substr(5);
-            console.log('url: ' + file);
+    /*handleImageUpload = (e) => {
+        <label>Upload an image</label>
+        <input type='file' name="image" multiple accept="image/*" onChange={this.handleImageUpload} />  
+                 
+        let fileImg = URL.createObjectURL(e.target.files[0]);
+           file = fileImg.substr(5);
+           console.log('url: ' + file);
+        let file = e.target.files[0];
         this.setState(() => ({ file }));
-    }
+}*/
     handleTextChange = (e) => {
         let time = moment().format('x');
         let text = e.target.value;
-        this.setState(() => ({ text, time }));
+        let img = 'https://picsum.photos/300/300/?random';  
+        this.setState(() => ({ text, time, img }));
     }
 
     render(){
@@ -57,8 +62,6 @@ export class Form extends React.Component{
                  {this.state.error && <p>{this.state.error}</p>}
                  <label>Title</label>
                  <input type="text" value={this.state.title} onChange={this.handleTitleChange} />
-                 <label>Upload an image</label>
-                 <input type='file' name="image" multiple accept="image/*" onChange={this.handleImageUpload} />  
                  <label>Text</label>
                  <textarea value={this.state.text} onChange={this.handleTextChange}></textarea>
                  <button className="button" type="submit">Save Post</button>

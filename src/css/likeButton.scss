@@ -1,0 +1,31 @@
+@import 'settings';
+
+.like-button{
+    padding: 0 0 $m-size 0;
+    p{
+      float: right;
+      background-color: $green;
+      min-width: 4rem;
+      text-align: center;
+      padding: 4px 5px 3px 5px;
+      border-radius: 3px;
+      color: #fff;
+      vertical-align: bottom;
+      margin: 0;
+      margin-top: -0.5rem;
+      margin-right: 1.5rem;
+      cursor: pointer;
+    }
+    span{
+      float: right;
+      margin-top: -0.2rem;
+      color: $middle-grey;
+      font-size: 1.1rem;
+    }
+    .icon{
+        float: right;
+        margin-right: 0.3rem;
+        margin-top: -0.4rem;
+        color: $middle-grey;
+    }
+}

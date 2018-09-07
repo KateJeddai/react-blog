@@ -4,13 +4,14 @@ import { PostItem } from './PostItem';
 
 const PostsList = (props) => {
     let posts = props.posts;
-        if(posts.length > 0){
+    console.log(props.img);
+      if(posts.length > 0){
         posts = posts.sort((a, b) => {
          if(props.sortBy === 'name'){
-           return a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1;
+            return a.title.toLowerCase() > b.title.toLowerCase() ? 1 : -1;
          }   
           else if(props.sortBy === 'date'){
-           return a.time > b.time ? 1 : -1;
+            return a.time > b.time ? 1 : -1;
          }
         });
       }
@@ -18,7 +19,7 @@ const PostsList = (props) => {
     <div className="posts-list">
        {posts.length > 0 && posts.map(post => (
                <div key={post.title}>
-                 <PostItem title={post.title} time={post.time} text={post.text} id={post.id} />
+                 <PostItem title={post.title} time={post.time} text={post.text} id={post.id} img={post.img} />
                </div>
             )
        )} 

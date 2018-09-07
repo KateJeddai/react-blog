@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Form } from './Form';
 import { editPost, removePost } from '../actions/postReducer';
+import '../css/form.scss';
 
 
 const EditPost = (props) => {
@@ -16,8 +17,10 @@ const EditPost = (props) => {
     return(
         <div className="container">
             <h1 className="edit-title">Edit Post</h1>
-            <Form post={props.post} onSubmit={handleSubmit} />
-            <button className="button btn-remove" post={props.post} onClick={handleRemove}>Remove post</button>
+            <div className="form">
+                <Form post={props.post} onSubmit={handleSubmit} />
+                <button className="button btn-remove" post={props.post} onClick={handleRemove}>Remove post</button>
+            </div>                
         </div>
     );
 }
